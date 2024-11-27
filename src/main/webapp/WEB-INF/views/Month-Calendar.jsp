@@ -19,16 +19,18 @@
     </script>
 </head>
 <body>
-	<div>
-		<h4>나의 한달은?</h4>
-		<div id='calendar' style="width:800px; height:800px;"></div>
-	</div>
-	
-	<div id="btnBox">
-		<button>일별 통계</button>
-		<button>주별 통계</button>
-		<button>확인</button>
+	<div id="container">
+		<div id="calendarBox">
+			<h4>나의 한달은?</h4>
+			<div id='calendar' style="width:800px; height:800px;"></div>
+		</div>
 		
+		<div id="btnBox">
+			<button>일별 통계</button>
+			<button>주별 통계</button>
+			<button>확인</button>
+			
+		</div>
 	</div>
 </body>
 </html>
