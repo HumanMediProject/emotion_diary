@@ -15,7 +15,7 @@
 %>
 <div id="swapStatistics">
 	<span>${statistics_type.toString()}</span>
-	
+	<br>
 	<c:choose>
 		<c:when test="${statistics_type.toString() != 'TODAY'}">
 			<button onclick="window.location.href='/';">일간 통계</button>

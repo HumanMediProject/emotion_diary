@@ -11,14 +11,19 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class StatisticsController {
 	
-	@RequestMapping(value="/today-statistics")
+	@RequestMapping(value="/Today-Statistics")
 	public ModelAndView getStatics(HttpServletResponse response) throws IOException{
 		return new ModelAndView("Today-Statistics");
 	}
 	
-	@RequestMapping(value="/chartviewer")
+	@RequestMapping(value="/ChartViewer")
 	public ModelAndView getChart(HttpServletResponse response) throws IOException{
 		return new ModelAndView("chartviewer");
+	}
+	
+	@RequestMapping(value="/Month-Calendar")
+	public ModelAndView monthCalendar(HttpServletResponse response) throws IOException{
+		return new ModelAndView("Month-Calendar");
 	}
 	
 	

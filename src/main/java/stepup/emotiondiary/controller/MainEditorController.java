@@ -26,8 +26,5 @@ public class MainEditorController {
 		return new ModelAndView("Editor");
 	}
 	
-	@RequestMapping(value="/MonthCalendar")
-	public ModelAndView monthCalender(HttpServletResponse response) throws IOException{
-		return new ModelAndView("Month-Calendar");
-	}
+	
 }
