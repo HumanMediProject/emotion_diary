@@ -4,7 +4,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Encryptor</title>
+    <title>Encryptor 1</title>
     <style>
         body {
             margin: 20px;
