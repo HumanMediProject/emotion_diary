@@ -10,7 +10,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
 
-    # steps:
+    steps:
     # - name: Repository Checkout
     #   uses: actions/checkout@v2
 
