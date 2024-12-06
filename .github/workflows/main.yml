@@ -27,6 +27,7 @@ jobs:
       run: |
         mvn install
         ls -l target
+        tree target
 
     - name: Add SSH Key
       run: |
