@@ -38,6 +38,7 @@ public class MyBatisConfig {
 	public DataSource dataSource() {
 		HikariConfig config = new HikariConfig();
 		try {
+			System.out.println("현재 작업 디렉토리: " + System.getProperty("user.dir"));
 			Map<String, Object> propMap = new Yaml().load(new FileReader("hello.yml"));
 			Map<String, String> databaseConfig = (Map<String, String>)propMap.get("database");
 			

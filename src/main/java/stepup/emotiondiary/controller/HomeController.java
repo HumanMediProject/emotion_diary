@@ -19,6 +19,6 @@ public class HomeController {
 		model.addAttribute("map", service.getTest());
 		
 		
-		return "Login";		
+		return "Login";
 	}
 }
