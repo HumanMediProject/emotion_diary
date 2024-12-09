@@ -12,14 +12,16 @@ public class UserService {
 	@Autowired
 	UserMapper mapper;
 	
-	@Autowired
-	UserDTO userDTO;
-	
 	public int getTest() {
 		int result = mapper.debug();
 		
 		
 		return result;
+	}
+
+	public int register(UserDTO userDto) {
+		int res = mapper.register(userDto);
+		return res;
 	}
 	
 
