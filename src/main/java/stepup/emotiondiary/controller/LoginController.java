@@ -22,6 +22,13 @@ public class LoginController {
 	public ModelAndView login(HttpServletResponse response) throws IOException{
 		return new ModelAndView("Login");
 	}
+	@PostMapping(value="/LoginAction")
+	public String loginAction(Model model, String userId, String userPw) {
+		
+		System.out.println(userId);
+		System.out.println(userPw);
+		return "Login";
+	}
 	@RequestMapping(value="/Register")
 	public ModelAndView register(HttpServletResponse response) throws IOException{
 		return new ModelAndView("Register");
