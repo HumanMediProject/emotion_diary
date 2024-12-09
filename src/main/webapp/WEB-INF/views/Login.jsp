@@ -17,7 +17,7 @@
 	<!-- 로그인 폼 -->
 	<div id="container">
 		<div id="wrapper">
-			<form action="post" id="loginForm">
+			<form action="LoginAction" method="post" id="loginForm">
 				<div id="loginBox">
 					<label class="input_label">ID</label>
 					<input class="user_input" type="text" id="userId" name="userId" placeholder="ID를 입력해주세요">
