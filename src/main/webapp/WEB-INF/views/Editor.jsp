@@ -19,17 +19,13 @@
 				<div id="emotionBox">
 					<label for="emotion">지금 기분은?</label><br>
 					<select name="emotion">
-						<option value="즐거움">즐거움</option>
-						<option>행복함</option>
-						<option>슬픔</option>
-						<option>자괴감</option>
-						<option>불안함</option>
-						<option>우울함</option>
-						<option>화남</option>
-						<option>황당함</option>
-						<option>당황스러움</option>
-						<option>놀람</option>
-						<option>극대노</option>
+						<option value="happy">매우 기쁨</option>
+						<option value="good">좋음</option>
+						<option value="anticipation">기대</option>
+						<option value="soso">평범</option>
+						<option value="apathy">피곤함</option>
+						<option value="sadness">우울함</option>
+						<option value="anger">화남</option>
 					</select>
 				</div>
 				<div id="eventBox">

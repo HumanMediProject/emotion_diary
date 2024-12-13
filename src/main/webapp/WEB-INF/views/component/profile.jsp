@@ -8,8 +8,8 @@
 </head>
 <body>
 <div id="profileBox">
-	<span id="profileName">김예나</span><br>
-	<span id="profileOne">각오 한마디</span>
+	<span id="profileName">${param.UserDTO.name}</span><br>
+	<span id="profileOne">${param.UserDTO.one_sentense}</span>
 </div>
 </body>
 </html>
