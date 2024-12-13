@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="stepup.emotiondiary.dao.UserDao">
+	<insert id="insertUser"
+			parameterType="stepup.emotiondiary.dto.UserDTO">
+	INSERT INTO USERS(hashed_password,email,name,authentication_provider,diary_passcode,gender)
+	values (#{hashed_password},#{email},#{name},#{authentication_provider},#{diary_passcode},#{gender})
+	</insert>
+	
+	<select id="selectUser" parameterType="stepup.emotiondiary.dto.UserDTO" resultType="stepup.emotiondiary.dto.UserDTO">
+	SELECT email,hashed_password,user_id
+	FROM USERS
+	WHERE email = #{email}
+	  AND hashed_password = #{hashed_password}
+	</select>
+	
+	<select id="checkEmail" parameterType="String" resultType="int">
+		SELECT count(*)
+		FROM USERS
+		WHERE email = #{email}
+	</select>
+	<select id="getUserInfo" parameterType="stepup.emotiondiary.dto.UserDTO" resultType="stepup.emotiondiary.dto.UserDTO">
+	SELECT *
+	FROM USERS
+	WHERE email = #{email}
+	  AND hashed_password = #{hashed_password}
+	</select>
+	
+	<select id="selectEmail" parameterType="stepup.emotiondiary.dto.UserDTO" resultType="int">
+	SELECT email
+	FROM USERS
+	WHERE name = #{name}
+	</select>
+	
+	<update id="updatePassword" parameterType="stepup.emotiondiary.dto.UserDTO">
+	UPDATE USERS
+	SET hashed_password = #{hashed_password}
+	WHERE user_id = #{user_id}
+	  AND email = #{email}	
+	</update>
+	
+	<delete id="deleteUser" parameterType="String">
+	DELETE
+	FROM USERS
+	WHERE email = #{email}
+	</delete>
+</mapper>

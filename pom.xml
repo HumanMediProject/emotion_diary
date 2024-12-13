@@ -100,11 +100,22 @@
 		    <artifactId>snakeyaml</artifactId>
 		    <version>2.3</version>
 		</dependency>
-
-
-
 		
-		
+		<!-- Junit Test-->
+		<dependency>
+		    <groupId>org.junit.jupiter</groupId>
+		    <artifactId>junit-jupiter-api</artifactId>
+		    <version>5.7.2</version>
+		    <scope>test</scope>
+		</dependency>
+		<dependency>
+		    <groupId>org.junit.jupiter</groupId>
+		    <artifactId>junit-jupiter-engine</artifactId>
+		    <version>5.7.2</version>
+		    <scope>test</scope>
+		</dependency>
+
+	
 		<dependency>
 		    <groupId>javax.servlet</groupId>
 		    <artifactId>jstl</artifactId>
@@ -121,6 +132,14 @@
 	</repositories>
 
 	<build>
+		<resources>
+	        <resource>
+	            <directory>src/main/webapp/resources</directory>
+	            <includes>
+	                <include>mapper/*.xml</include>
+	            </includes>
+	        </resource>
+	    </resources>
 		<finalName>emotiondiary</finalName>
 		<plugins>
 			<plugin>

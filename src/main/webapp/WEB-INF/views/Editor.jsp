@@ -9,34 +9,39 @@
 <link rel="stylesheet" href="/resources/css/common2.css">
 </head>
 <body>
+	<% request.setCharacterEncoding("UTF-8"); %>
 	<div id="container">
 		<header>
 			<%@include file="/WEB-INF/views/component/profile.jsp" %>
 			<%@include file="/WEB-INF/views/component/title.jsp" %>
 		</header>
 		<div id="formBox">
-			<form action="post" id="editorForm">
+			<form action="/diary/create" method="post" id="editorForm">
+			    <div id="titleBox">
+			        <label for="title">일기 제목</label><br>
+			        <input type="text" id="title" name="title" required><br>
+		    	</div>
 				<div id="emotionBox">
-					<label for="emotion">지금 기분은?</label><br>
-					<select name="emotion">
-						<option value="즐거움">즐거움</option>
-						<option>행복함</option>
-						<option>슬픔</option>
-						<option>자괴감</option>
-						<option>불안함</option>
-						<option>우울함</option>
-						<option>화남</option>
-						<option>황당함</option>
-						<option>당황스러움</option>
-						<option>놀람</option>
-						<option>극대노</option>
+					<label for="emotion_type">지금 기분은?</label><br>
+					<select name="emotion_type">
+						<option value="2">즐거움</option>
+						<option value="2">행복함</option>
+						<option value="-2">슬픔</option>
+						<option value="-2">자괴감</option>
+						<option value="-1">불안함</option>
+						<option value="-1">우울함</option>
+						<option value="-2">화남</option>
+						<option value="0">황당함</option>
+						<option value="0">당황스러움</option>
+						<option value="0">놀람</option>
+						<option value="-2">극대노</option>
 					</select>
 				</div>
 				<div id="eventBox">
 					<label for="content">무슨 일이 일어나고 있나요?</label><br>
 					<textarea rows="5" cols="20" name="content"></textarea><br>
 				</div>
-				<button>기록</button>
+				<button type="submit">기록</button>
 			</form>
 		</div>
 	</div>
