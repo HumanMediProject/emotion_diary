@@ -13,12 +13,14 @@ public class UserDTO {
 	private String hashed_password;
 	private int authentication_provider;
 	
+	
 	public String getDiary_passcode() {
 		return diary_passcode;
 	}
 	public void setDiary_passcode(String diary_passcode) {
 		this.diary_passcode = diary_passcode;
 	}
+	
 	public int getUser_id() {
 		return user_id;
 	}

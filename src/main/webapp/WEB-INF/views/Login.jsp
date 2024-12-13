@@ -8,28 +8,44 @@
 <link rel="stylesheet" href="/resources/css/common.css">
 <title>Login</title>
 </head>
+<script>
+	window.onload = function () {
+	    // 서버에서 전달된 FlashAttribute를 JS 변수로 가져오기
+	    const message = '${message}';
+	    const error = '${error}';
+	
+	    // 메시지가 있으면 알림창 표시
+	    if (message) alert(message);
+	    if (error) alert(error);
+	};
+</script>
 <body>
 	<!-- 상단 헤더 -->
 	<header>
 		<%@include file="/WEB-INF/views/component/title.jsp" %>
 	</header>
 	
+	<c:if test="${not empty error}">
+    <div class="error-message">
+        ${error}
+    </div>
+</c:if>
 	<!-- 로그인 폼 -->
 	<div id="container">
 		<div id="wrapper">
-			<form action="LoginAction" method="post" id="loginForm">
+			<form action="/user/login" method="post" id="loginForm">
 				<div id="loginBox">
-					<label class="input_label">ID</label>
-					<input class="user_input" type="text" id="userId" name="userId" placeholder="ID를 입력해주세요">
+					<label class="input_label">Email</label>
+					<input class="user_input" type="text" id="userId" name="email" placeholder="Email을 입력해주세요">
 					<label class="input_label">Password</label>
-					<input class="user_input" type="text" id="userPw" name="userPw" placeholder="PW를 입력해주세요">
+					<input class="user_input" type="text" id="userPw" name="hashed_password" placeholder="PW를 입력해주세요">
 				</div>
 				<button type="submit" id="loginBtn" class="login_bth">로그인</button>
 			</form>
 			
 			<!-- 비밀번호 찾기 -->
 			<div id="passwordBox">
-				<a href="Password-Finder.jsp">Forget Password?</a>
+				<a href="Password-Finder">Forget Password?</a>
 			</div>
 			
 			<!-- OAuth 로그인 -->
@@ -40,7 +56,7 @@
 			
 		</div>
 		<div id="RegisterBox">
-			계정이 없으시다면 <a href="Register.jsp">여기</a>를 클릭해주세요
+			계정이 없으시다면 <a href="Register">여기</a>를 클릭해주세요
 		</div>
 	</div>
 

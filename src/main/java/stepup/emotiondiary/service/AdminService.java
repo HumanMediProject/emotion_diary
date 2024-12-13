@@ -1,19 +1,18 @@
 package stepup.emotiondiary.service;
 
-import stepup.emotiondiary.mapper.AdminMapper;
-
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import stepup.emotiondiary.dao.AdminDao;
 import stepup.emotiondiary.dto.AuthDTO;
 import stepup.emotiondiary.dto.GenderDTO;
 
 @Service
 public class AdminService {
 	@Autowired
-	AdminMapper mapper;
+	AdminDao adminDao;
 	
 	@Autowired
 	GenderDTO genderDTO;
@@ -23,11 +22,11 @@ public class AdminService {
 	
 	public List<GenderDTO> getGenderTable(){
 		
-		return mapper.getGenderTable();
+		return adminDao.getGenderTable();
 		
 	}
 	
 	public List<AuthDTO> getAuthProviderTable(){
-		return mapper.getAuthTable();
+		return adminDao.getAuthTable();
 	}
 }

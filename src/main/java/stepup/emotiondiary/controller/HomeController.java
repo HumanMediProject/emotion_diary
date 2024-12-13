@@ -16,7 +16,7 @@ public class HomeController {
 	@GetMapping(value="")
 	public String test(Model model) {
 		
-		model.addAttribute("map", service.getTest());
+		//model.addAttribute("map", service.selectUser(null));
 		
 		
 		return "Login";

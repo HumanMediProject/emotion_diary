@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace="stepup.emotiondiary.dao.DiaryDao">
+  
+  <insert id="insertDiary" parameterType="stepup.emotiondiary.dto.DiaryDTO">
+  INSERT INTO DIARY(owner,title,emotion_type,content)
+  VALUES (#{owner},#{title},#{emotion_type},#{content})
+  </insert>
+  
+  <select id="getDiaryList" parameterType="stepup.emotiondiary.dto.DiaryDTO" resultType="stepup.emotiondiary.dto.DiaryDTO">
+  SELECT title,emotion_type,content,CONVERT_TZ(time, 'UTC', 'Asia/Seoul') AS time
+  FROM DIARY
+  WHERE owner = #{owner}
+  </select>
+  
+  <update id="updateDiary" parameterType="stepup.emotiondiary.dto.DiaryDTO">
+  UPDATE DIARY
+  SET title = #{title},emotion_type = #{emotion_type}, content = #{content}
+  WHERE owner = #{owner}
+  </update>
+  
+  <delete id="deleteDiary" parameterType="stepup.emotiondiary.dto.DiaryDTO">
+  DELETE
+  FROM DIARY
+  WHERE diary_id = #{diary_id}
+  </delete>
+  </mapper>
